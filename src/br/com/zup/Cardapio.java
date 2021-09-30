@@ -16,5 +16,11 @@ public class Cardapio {
         this.produtos = produtos;
     }
 
+    //Método adicionar produto
+    public void adicionarProduto(Produto produto){
+        this.produtos.add(produto);
+    }
+
+
 
 }
