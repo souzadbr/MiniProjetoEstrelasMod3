@@ -1,5 +1,8 @@
 package br.com.zup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pedido {
 
     private double numeroDaComanda;
@@ -29,6 +32,14 @@ public class Pedido {
     public void setNumeroDaMesa(double numeroDaMesa) {
         this.numeroDaMesa = numeroDaMesa;
     }
+
+    public void fazerPedido(){
+        List<Produto> produtos = new ArrayList<>();
+        produtos.add(novoProduto);
+    }
+
+
+}
 
     @Override
     public String toString() {
