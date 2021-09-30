@@ -29,7 +29,7 @@ public class Sistema {
         int opcaoSelecionada = entradaTeclado("Selecione sua opção: ").nextInt();
         if (opcaoSelecionada == 1){
             cadastrarprodutos();
-            System.out.println("Produto cadastrado com sucesso!");
+            System.out.println("Produto(s) cadastrado com sucesso!");
         }else{
             menuPrincipal();
         }
@@ -43,7 +43,7 @@ public class Sistema {
     }
 
     //Método de adicionar produtos no cardápio
-    public static void cadastrarprodutos() {
+   /* public static void cadastrarprodutos() {
         String nome = entradaTeclado("Digite o nome do produto: ").nextLine();
         double valor = entradaTeclado("Digite o preço do produto: ").nextDouble();
         Produto produtos = new Produto(nome, valor);
@@ -53,14 +53,23 @@ public class Sistema {
         System.out.println("1 - SIM");
         System.out.println("2 - Finalizar");
         int opcaoDigitada = entradaTeclado("Digite a opção desejada: ").nextInt();
-        while ()
         if (opcaoDigitada == 1 ){
             String nome1 = entradaTeclado("Digite o nome do produto: ").nextLine();
             double valor1 = entradaTeclado("Digite o preço do produto: ").nextDouble();
             Produto produtos1 = new Produto(nome, valor);
             cardapio.adicionarProduto(produtos);
         }else{
-            System.exit(0);
+            System.exit();
+        }
+*/
+    public static void cadastrarprodutos() {
+        int qtdeProdutos = entradaTeclado("Digite a quantidade de produtos que deseja cadastrar:").nextInt();
+        for (int i = 0; i < qtdeProdutos ; i++) {
+            String nome = entradaTeclado("Digite o nome do produto: ").nextLine();
+            double valor = entradaTeclado("Digite o preço do produto: ").nextDouble();
+            Produto produtos = new Produto(nome, valor);
+            Cardapio cardapio = new Cardapio();
+            cardapio.adicionarProduto(produtos);
         }
     }
 
