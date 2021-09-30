@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cardapio {
-    private List<Produto>produtos = new ArrayList<>();
+    private List<Produto> produtos = new ArrayList<>();
 
     //Contrutor vazio
     public Cardapio() {
@@ -17,10 +17,18 @@ public class Cardapio {
     }
 
     //Método adicionar produto
-    public void adicionarProduto(Produto produto){
+    public void adicionarProduto(Produto produto) {
         this.produtos.add(produto);
     }
 
+    //Metodo exibir cardapio
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("Nossos produtos disponiveis para venda são: ");
+        retorno.append(produtos)
+        return retorno.toString();
+    }
 
 
 }
