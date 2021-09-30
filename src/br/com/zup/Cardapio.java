@@ -3,6 +3,7 @@ package br.com.zup;
 import java.util.ArrayList;
 import java.util.List;
 
+    //Atributos
 public class Cardapio {
     private List<Produto> produtos = new ArrayList<>();
 
@@ -18,7 +19,7 @@ public class Cardapio {
 
     //Método adicionar produto
     public void adicionarProduto(Produto produto) {
-        this.produtos.add(produto);
+        produtos.add(produto);
     }
 
     //Metodo exibir cardapio
@@ -26,7 +27,7 @@ public class Cardapio {
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("Nossos produtos disponiveis para venda são: ");
-        retorno.append(produtos)
+        retorno.append(produtos);
         return retorno.toString();
     }
 

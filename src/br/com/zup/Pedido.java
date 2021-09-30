@@ -5,23 +5,28 @@ import java.util.List;
 
 public class Pedido {
 
-    private double numeroDaComanda;
-    private double numeroDaMesa;
+    //Atributos
+    private int numeroDaComanda;
+    private int numeroDaMesa;
+    private List<Produto> produtos = new ArrayList<>();
+    private List<Produto> selecionados = new ArrayList<>();
 
+    //Métodos Construtores
     public Pedido() {
 
     }
 
-    public Pedido(double numeroDaComanda, double numeroDaMesa) {
+    public Pedido(int numeroDaComanda, int numeroDaMesa) {
         this.numeroDaComanda = numeroDaComanda;
         this.numeroDaMesa = numeroDaMesa;
-    }
+           }
 
+    //Getters e Setters
     public double getNumeroDaComanda() {
         return numeroDaComanda;
     }
 
-    public void setNumeroDaComanda(double numeroDaComanda) {
+    public void setNumeroDaComanda(int numeroDaComanda) {
         this.numeroDaComanda = numeroDaComanda;
     }
 
@@ -29,28 +34,31 @@ public class Pedido {
         return numeroDaMesa;
     }
 
-    public void setNumeroDaMesa(double numeroDaMesa) {
+    public void setNumeroDaMesa(int numeroDaMesa) {
         this.numeroDaMesa = numeroDaMesa;
     }
 
-    public void fazerPedido(){
-        List<Produto> produtos = new ArrayList<>();
-        produtos.add(novoProduto);
+
+    //Método Fazer Pedido
+    public <Selecionado> void fazerPedido(Produto novoProduto) {
+
+        selecionados.add(novoProduto);
     }
 
-
-}
-
+    //Método Exibir Pedido
     @Override
     public String toString() {
-        @Override
-        public String toString() {
-            StringBuilder retorno = new StringBuilder();
-            retorno.append("\n--PEDIDO --");
-            retorno.append("\nNúmero da Mesa" + numeroDaMesa);
-            retorno.append("\nNúmero da Comanda" + numeroDaComanda);
-            retorno.append("\nProdutos: " + produtos);
-            retorno.append("\nValor: " + valor);
-            return retorno.toString();
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("\n--PEDIDO --");
+        retorno.append("\nNúmero da Mesa\t" + numeroDaMesa);
+        retorno.append("\nNúmero da Comanda\t" + numeroDaComanda);
+        retorno.append("\nProdutos do Pedido:\t " + selecionados );
+        return retorno.toString();
     }
+
+
 }
+
+
+
+
