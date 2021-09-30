@@ -14,5 +14,19 @@ public class Pedido {
         this.numeroDaMesa = numeroDaMesa;
     }
 
+    public double getNumeroDaComanda() {
+        return numeroDaComanda;
+    }
 
+    public void setNumeroDaComanda(double numeroDaComanda) {
+        this.numeroDaComanda = numeroDaComanda;
+    }
+
+    public double getNumeroDaMesa() {
+        return numeroDaMesa;
+    }
+
+    public void setNumeroDaMesa(double numeroDaMesa) {
+        this.numeroDaMesa = numeroDaMesa;
+    }
 }
