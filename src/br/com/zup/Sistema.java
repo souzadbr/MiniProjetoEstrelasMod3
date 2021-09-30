@@ -1,8 +1,12 @@
 package br.com.zup;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
+
+    public static List<Produto>cardapio = new ArrayList<>();
 
     //Método de entrada de dados
     private static Scanner entradaTeclado(String mensagem) {
@@ -35,43 +39,36 @@ public class Sistema {
         }
     }
 
-    //Método do Cliente
-    public static void menuCliente() {
-        System.out.println("Exibir cardápio");
-        System.out.println("Realizar Pedido");
-        System.out.println("Voltar ao Menu Principal");
-    }
-
     //Método de adicionar produtos no cardápio
-   /* public static void cadastrarprodutos() {
-        String nome = entradaTeclado("Digite o nome do produto: ").nextLine();
-        double valor = entradaTeclado("Digite o preço do produto: ").nextDouble();
-        Produto produtos = new Produto(nome, valor);
-        Cardapio cardapio = new Cardapio();
-        cardapio.adicionarProduto(produtos);
-        System.out.println("Deseja cadastrar mais um produto?");
-        System.out.println("1 - SIM");
-        System.out.println("2 - Finalizar");
-        int opcaoDigitada = entradaTeclado("Digite a opção desejada: ").nextInt();
-        if (opcaoDigitada == 1 ){
-            String nome1 = entradaTeclado("Digite o nome do produto: ").nextLine();
-            double valor1 = entradaTeclado("Digite o preço do produto: ").nextDouble();
-            Produto produtos1 = new Produto(nome, valor);
-            cardapio.adicionarProduto(produtos);
-        }else{
-            System.exit();
-        }
-*/
     public static void cadastrarprodutos() {
         int qtdeProdutos = entradaTeclado("Digite a quantidade de produtos que deseja cadastrar:").nextInt();
         for (int i = 0; i < qtdeProdutos ; i++) {
             String nome = entradaTeclado("Digite o nome do produto: ").nextLine();
             double valor = entradaTeclado("Digite o preço do produto: ").nextDouble();
             Produto produtos = new Produto(nome, valor);
-            Cardapio cardapio = new Cardapio();
-            cardapio.adicionarProduto(produtos);
+            //cardapio.adicionarProduto(produtos);
+            cardapio.add(produtos);
+
+
         }
     }
+
+    //Método do Cliente
+    public static void menuCliente() {
+        System.out.println("1 - Exibir cardápio");
+        System.out.println("2 - Realizar Pedido");
+        System.out.println("3 - Voltar ao Menu Principal");
+        int opcaoDigitada = entradaTeclado("Digite a opção desejada:").nextInt();
+        if (opcaoDigitada == 1){
+            System.out.println(cardapio);
+        }else if (opcaoDigitada == 2){
+            Pedido pedido = new Pedido();
+        }else{
+            menuPrincipal();
+        }
+    }
+
+
 
     //Menu Validação do Administrador
     public static void validaAdministrador() {
@@ -97,7 +94,7 @@ public class Sistema {
     //Método de execução do Sistema
     public static void executa() {
         boolean menu = true;
-        Cardapio cardapio = new Cardapio();
+
 
         while (menu) {
             menuPrincipal();

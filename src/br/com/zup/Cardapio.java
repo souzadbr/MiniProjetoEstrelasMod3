@@ -5,7 +5,7 @@ import java.util.List;
 
     //Atributos
 public class Cardapio {
-    private List<Produto> produtos = new ArrayList<>();
+    public static List<Produto> produtos = new ArrayList<>();
 
     //Contrutor vazio
     public Cardapio() {
