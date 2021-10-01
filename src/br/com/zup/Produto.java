@@ -32,11 +32,17 @@ public class Produto {
         @Override
         public String toString() {
             StringBuilder retorno = new StringBuilder();
-            retorno.append("\nNome " + nome);
-            retorno.append("\nValor R$ " +valor);
+            retorno.append("\nNome do Produto: " + nome);
+            retorno.append("\nValor Unitário: R$ " + valor);
             retorno.append("\n\n");
             return retorno.toString();
 
     }
 
+
+    public String toString1() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
 }

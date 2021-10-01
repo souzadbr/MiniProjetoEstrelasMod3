@@ -53,6 +53,7 @@ public class Pedido {
         retorno.append("\nNúmero da Mesa\t" + numeroDaMesa);
         retorno.append("\nNúmero da Comanda\t" + numeroDaComanda);
         retorno.append("\nProdutos do Pedido:\t " + selecionados );
+
         return retorno.toString();
     }
 
